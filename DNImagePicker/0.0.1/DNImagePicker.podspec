@@ -12,4 +12,6 @@ Pod::Spec.new do |s|
   s.dependency 'ICGVideoTrimmer'
   s.source = { :git => "git@github.com:ducn/DNImagePicker.git", :tag => "#{s.version}" }
   s.source_files = "DNImagePicker/Classes", "DNImagePicker/Classes/*.swift", "DNImagePicker/Classes/**/*.swift"
+#s.resources = "DNImagePicker/**/*.{png,jpeg,jpg,storyboard,xib}"
+  s.resource_bundles = { 'DNImagePicker' => ['DNImagePicker/**/*.{png,jpeg,jpg,storyboard,xib}']}
 end
