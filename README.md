@@ -38,15 +38,15 @@ func imagePickerController(_ picker: DNImagePickerController, didFinishPickingMe
         // Receive image here
     }
 }
-```swift
+```
 
 ## Screenshot
 
 Trim/crop video screen:
-https://raw.githubusercontent.com/ducn/DNImagePicker/master/crop-video.png
+![Sample Crop Image](https://raw.githubusercontent.com/ducn/DNImagePicker/master/crop-video.png)
 
 Crop photo screen
-https://raw.githubusercontent.com/ducn/DNImagePicker/master/crop-photo.png
+![Sample Crop Video](https://raw.githubusercontent.com/ducn/DNImagePicker/master/crop-photo.png)
 
 ### License
 MIT
