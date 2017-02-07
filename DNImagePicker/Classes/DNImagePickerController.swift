@@ -19,7 +19,9 @@ public protocol DNImagePickerControllerDelegate:class{
 public class DNImagePickerController: UIViewController{
     public weak var delegate: DNImagePickerControllerDelegate?
     public var mediaTypes:[String] = [kUTTypeMovie as String, kUTTypeImage as String]
-
+    public var maxTrimLength:Float = 60.0 // in seconds
+    public var minTrimLength:Float = 3.0 // in seconds
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         useDefaultPickerUI()
@@ -43,6 +45,8 @@ public class DNImagePickerController: UIViewController{
             let videoEditor = DNVideoEditorController(nibName: "DNVideoEditorController", bundle: bundle)
             videoEditor.videoUrl = videoUrl
             videoEditor.delegate = self
+            videoEditor.maxTrimLength = maxTrimLength
+            videoEditor.minTrimLength = minTrimLength
             addChild(controller: videoEditor)
         }
     }

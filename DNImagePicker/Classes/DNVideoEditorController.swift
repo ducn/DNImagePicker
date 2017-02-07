@@ -59,13 +59,16 @@ internal class DNVideoEditorController: UIViewController{
         _player = player
         _playedPosition = 0
         // trimmer
+        let duration = Float(CMTimeGetSeconds(asset.duration))
         trimmerView.asset = _asset
         trimmerView.themeColor = UIColor.lightGray
         trimmerView.showsRulerView = true
         trimmerView.delegate = self
         trimmerView.trackerColor = UIColor.cyan
+        trimmerView.maxLength = duration > maxTrimLength ? CGFloat(maxTrimLength) : CGFloat(floor(duration) + 1)
+        trimmerView.maxLength = trimmerView.maxLength > 15 ? trimmerView.maxLength : 15
+        trimmerView.minLength = CGFloat(minTrimLength)
         trimmerView.resetSubviews()
-        trimmerView.maxLength = 60
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(DNVideoEditorController.playbackViewDidTap))
         playbackView.addGestureRecognizer(tapGesture)
         playbackViewDidTap()
@@ -126,6 +129,9 @@ internal class DNVideoEditorController: UIViewController{
     //MARK:- Vars
     weak var delegate: DNVideoEditorControllerDelegate?
     var videoUrl:URL?
+    var maxTrimLength:Float = 60 // in seconds
+    var minTrimLength:Float = 3 // in seconds
+    
     fileprivate var _asset:AVAsset?
     fileprivate var _player: AVPlayer?
     fileprivate var _playerLayer: AVPlayerLayer?

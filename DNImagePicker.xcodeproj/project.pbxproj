@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3DAC2F1E35ABF40034DBFB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F3DAC311E35ABF40034DBFB /* Localizable.strings */; };
 		0FD0AACC1E321AE2009C4920 /* DNImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FD0AACA1E321AE2009C4920 /* DNImagePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0FD0AAED1E321B4A009C4920 /* WDCropBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD0AAE51E321B4A009C4920 /* WDCropBorderView.swift */; };
 		0FD0AAEE1E321B4A009C4920 /* WDImageCropOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD0AAE61E321B4A009C4920 /* WDImageCropOverlayView.swift */; };
@@ -21,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F3DAC301E35ABF40034DBFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0F3DAC331E35AFE10034DBFB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0F3DAC341E35AFE90034DBFB /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0FD0AAC71E321AE2009C4920 /* DNImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DNImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD0AACA1E321AE2009C4920 /* DNImagePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNImagePicker.h; sourceTree = "<group>"; };
 		0FD0AACB1E321AE2009C4920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				0FD0AAF61E321B5E009C4920 /* DNVideoEditorController.xib */,
+				0F3DAC311E35ABF40034DBFB /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -183,6 +188,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				vi,
+				"zh-Hant",
 			);
 			mainGroup = 0FD0AABD1E321AE2009C4920;
 			productRefGroup = 0FD0AAC81E321AE2009C4920 /* Products */;
@@ -200,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FD0AAF71E321B5E009C4920 /* DNVideoEditorController.xib in Resources */,
+				0F3DAC2F1E35ABF40034DBFB /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,11 +264,25 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		0F3DAC311E35ABF40034DBFB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F3DAC301E35ABF40034DBFB /* en */,
+				0F3DAC331E35AFE10034DBFB /* zh-Hant */,
+				0F3DAC341E35AFE90034DBFB /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		0FD0AACD1E321AE2009C4920 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -314,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -416,6 +439,7 @@
 				0FD0AAD11E321AE2009C4920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

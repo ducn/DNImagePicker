@@ -32,7 +32,7 @@ internal class WDImageCropViewController: UIViewController {
 
         self.automaticallyAdjustsScrollViewInsets = false
 
-        self.title = "Choose Photo"
+        self.title = localizedString(for: "Choose Photo")
 
         self.setupNavigationBar()
         self.setupCropView()
@@ -82,7 +82,7 @@ internal class WDImageCropViewController: UIViewController {
         self.cancelButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         self.cancelButton.titleLabel?.shadowOffset = CGSize(width: 0, height: -1)
         self.cancelButton.frame = CGRect(x: 0, y: 0, width: 58, height: 30)
-        self.cancelButton.setTitle("Cancel", for: UIControlState())
+        self.cancelButton.setTitle(localizedString(for: "Cancel"), for: UIControlState())
         self.cancelButton.setTitleShadowColor(
             UIColor(red: 0.118, green: 0.247, blue: 0.455, alpha: 1), for: UIControlState())
         self.cancelButton.addTarget(self, action: #selector(actionCancel), for: .touchUpInside)
@@ -93,7 +93,7 @@ internal class WDImageCropViewController: UIViewController {
         self.useButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         self.useButton.titleLabel?.shadowOffset = CGSize(width: 0, height: -1)
         self.useButton.frame = CGRect(x: 0, y: 0, width: 58, height: 30)
-        self.useButton.setTitle("Use", for: UIControlState())
+        self.useButton.setTitle(localizedString(for: "Use"), for: UIControlState())
         self.useButton.setTitleShadowColor(
             UIColor(red: 0.118, green: 0.247, blue: 0.455, alpha: 1), for: UIControlState())
         self.useButton.addTarget(self, action: #selector(actionUse), for: .touchUpInside)
@@ -115,6 +115,21 @@ internal class WDImageCropViewController: UIViewController {
         UIGraphicsEndImageContext()
 
         return viewImage!
+    }
+    
+    fileprivate func localizedString(for string:String)->String{
+        if let bundle = libBundle(){
+            return NSLocalizedString(string, tableName: nil, bundle: bundle, value: "", comment: "")
+        }
+        return string
+    }
+    
+    fileprivate func libBundle()->Bundle?{
+        let podBundle = Bundle(for: self.classForCoder)
+        if let bundleURL = podBundle.url(forResource: "DNImagePicker", withExtension: "bundle"){
+            return Bundle(url: bundleURL)
+        }
+        return nil
     }
 
     fileprivate func setupToolbar() {

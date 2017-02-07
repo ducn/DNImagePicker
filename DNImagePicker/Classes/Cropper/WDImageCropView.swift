@@ -171,6 +171,9 @@ internal class WDImageCropView: UIView, UIScrollViewDelegate {
         self.scrollView.contentSize = CGSize(width: size.width, height: size.height)
         self.imageView.frame = CGRect(x: 0, y: floor((size.height - factoredHeight) * 0.5),
             width: factoredWidth, height: factoredHeight)
+        if factoredWidth != 0{
+            self.scrollView.setZoomScale(size.width/factoredWidth, animated: false)
+        }
     }
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
